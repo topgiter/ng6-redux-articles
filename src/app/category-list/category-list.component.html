@@ -1,0 +1,20 @@
+<div class="category-list">
+    <h2>Categroy List</h2>
+
+    <table>
+        <tr *ngFor="let category of categories; let idx = index">
+            <td>{{idx + 1}}</td>
+            <td>{{category.name}}</td>
+            <td><a routerLink="/category/{{category.id}}/edit">Edit</a></td>
+            <td><a routerLink="/category/{{category.id}}/detail">Detail</a></td>
+            <td><u><a (click)="deleteCategory(category.id)">Delete</a></u></td>
+        </tr>
+    </table>
+
+    <div>
+        <h3>Create new Category</h3>
+        <label for="categoryName">Category Name: </label>
+        <input [(ngModel)]="categoryName" id="categoryName" required>
+        <button (click)="createCategory()">Create</button>
+    </div>
+</div>

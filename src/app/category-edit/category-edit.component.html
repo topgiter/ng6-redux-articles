@@ -1,0 +1,10 @@
+<div class="category-edit">
+    <h2>Category Edit</h2>
+
+    <div>
+        <label for="categoryName">Category Name: </label>
+        <input [(ngModel)]="category.name" id="categoryName" required>
+        <button (click)="updateCategory()">Save</button>
+    </div>
+
+</div>
