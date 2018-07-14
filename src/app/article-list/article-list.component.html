@@ -1,0 +1,25 @@
+<div class="article-list">
+    <h2>Article List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles; let idx = index;">
+                <td>{{idx + 1}}</td>
+                <td>{{article.name}}</td>
+                <td>
+                    <select [ngModel]="article.category" (ngModelChange)="onSelectCategory(article.id, $event)">
+                        <option *ngFor="let category of categories" [ngValue]="category.id">
+                            {{category.name}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
