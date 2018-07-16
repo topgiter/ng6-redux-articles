@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ActivatedRoute } from '@angular/router';
 import { AppState } from '../../redux/app.reducer';
 import { Category } from '../../redux/category/category.model';
 import { getAllCategories } from '../../redux/category/category.selectors';
@@ -14,10 +13,10 @@ import * as CategoryActions from './../../redux/category/category.actions';
 export class CategoryListComponent implements OnInit {
   categories: Category[] = [];
   categoryName: string = '';
+  displayedColumns: string[] = ['id', 'name', 'actions'];
 
   constructor(
     private store: Store<AppState>,
-    private route: ActivatedRoute
   ) {
     this.readCategoriesState();
   }

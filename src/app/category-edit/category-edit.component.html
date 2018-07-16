@@ -1,10 +1,10 @@
 <div class="category-edit">
-    <h2>Category Edit</h2>
-
-    <div>
-        <label for="categoryName">Category Name: </label>
-        <input [(ngModel)]="category.name" id="categoryName" required>
-        <button (click)="updateCategory()">Save</button>
-    </div>
-
+    <mat-card>
+        <h2>Category Edit</h2>
+        <mat-form-field>
+            <mat-label>Category Name</mat-label>
+            <input matInput [(ngModel)]="category.name" required>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="updateCategory()">Save</button>
+    </mat-card>
 </div>

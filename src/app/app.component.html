@@ -1,10 +1,12 @@
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-    <div class="container">
-        <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="/">Articles</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="/categories">Categories</a></li>
-        </ul>
-    </div>
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+        *ngFor="let link of navLinks"
+        [routerLink]="link.path"
+        routerLinkActive #rla="routerLinkActive"
+        (click)="activeLinkPath = link.path"
+        [active]="activeLinkPath === link.path">
+        {{link.label}}
+    </a>
 </nav>
 
 <router-outlet></router-outlet>

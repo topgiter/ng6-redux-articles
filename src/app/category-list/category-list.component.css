@@ -1,0 +1,25 @@
+.category-list button {
+    margin-left: 10px;
+}
+
+.category-list h2 {
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.category-list table {
+    width: 100%;
+}
+
+.category-list table tr th:last-child {
+    text-align: center;
+}
+
+.category-list table a {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 238);
+    cursor: pointer;
+}

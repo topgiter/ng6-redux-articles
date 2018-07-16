@@ -3,6 +3,7 @@ import { Article } from './article.model';
 
 export const POPULATE_ARTICLES  = '[ARTICLE] populate';
 export const ASSIGN_CATEGORY    = '[ARTICLE] assign category';
+export const LOAD_ARTICLES      = '[ARTICLE] load';
 
 export class PopulateArticlesAction implements Action {
   readonly type = POPULATE_ARTICLES;
@@ -21,6 +22,14 @@ export class AssginCategoryAction implements Action {
   ) {}
 }
 
+export class LoadArticlesAction implements Action {
+  readonly type = LOAD_ARTICLES;
+
+  constructor (
+    public articles: Article[]
+  ) {}
+}
 export type ArticleActionType =
 PopulateArticlesAction |
-AssginCategoryAction;
+AssginCategoryAction |
+LoadArticlesAction;

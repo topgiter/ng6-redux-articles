@@ -9,11 +9,13 @@ import { getAllArticles } from '../../redux/article/article.selectors';
 
 @Component({
   selector: 'category-detail',
-  templateUrl: './category-detail.component.html'
+  templateUrl: './category-detail.component.html',
+  styleUrls: ['./category-detail.component.css']
 })
 export class CategoryDetailComponent implements OnInit {
   category: Category;
   articles: Article[];
+  displayedColumns: string[] = ['id', 'name'];
   categoryId = null;
 
   constructor(

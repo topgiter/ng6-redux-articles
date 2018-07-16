@@ -1,25 +1,31 @@
 <div class="article-list">
-    <h2>Article List</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let article of articles; let idx = index;">
-                <td>{{idx + 1}}</td>
-                <td>{{article.name}}</td>
-                <td>
-                    <select [ngModel]="article.category" (ngModelChange)="onSelectCategory(article.id, $event)">
-                        <option *ngFor="let category of categories" [ngValue]="category.id">
-                            {{category.name}}
-                        </option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
+    <table mat-table [dataSource]="articles" class="mat-elevation-z8">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No </th>
+            <td mat-cell *matCellDef="let article; let i = index;"> {{i + 1}} </td>
+        </ng-container>
+        
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let article"> {{article.name}} </td>
+        </ng-container>
+        
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <td mat-cell *matCellDef="let article">
+                <mat-form-field>
+                    <mat-select [(ngModel)]="article.category" (selectionChange)="onSelectCategory(article.id, $event.value)">
+                        <mat-option *ngFor="let category of categories" [value]="category.id">{{category.name}}</mat-option>
+                        <mat-option [value]="" *ngIf="categories.length === 0">No categories created</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </ng-container>    
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 </div>

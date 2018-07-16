@@ -1,22 +1,24 @@
 <div class="category-detail">
     <h2>Category Detail</h2>
 
-    <p><b>Category ID: </b>{{category.id}}</p>
     <p><b>Category Name: </b>{{category.name}}</p>
 
     <h3>Articles List</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let article of articles; let idx = index;">
-                <td>{{idx + 1}}</td>
-                <td>{{article.name}}</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <table mat-table [dataSource]="articles" class="mat-elevation-z8" *ngIf="articles.length">
+            <!-- Number Column -->
+        <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> No </th>
+                <td mat-cell *matCellDef="let article; let i = index;"> {{i + 1}} </td>
+            </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let article"> {{article.name}} </td>
+        </ng-container>
+            
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>    
 </div>

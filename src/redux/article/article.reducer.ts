@@ -1,10 +1,7 @@
 import { Article } from './article.model';
 import * as ArticleActions from './article.actions';
 
-const initialState: Article[] = [
-  { id: 1, name: 'Article 1', category: null },
-  { id: 2, name: 'Article 2', category: null }
-];
+const initialState: Article[] = [];
 
 export function ArticlesReducer(state: Article[] = initialState, action: ArticleActions.ArticleActionType) {
   switch (action.type) {
@@ -22,6 +19,9 @@ export function ArticlesReducer(state: Article[] = initialState, action: Article
 
         return article;
       })
+    }
+    case ArticleActions.LOAD_ARTICLES: {
+      return action.articles
     }
     default: {
       return state;
