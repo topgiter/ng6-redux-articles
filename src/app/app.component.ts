@@ -46,8 +46,10 @@ export class AppComponent implements OnInit {
       data => {
         const articles: Article[] = data[0]['articles'].map((a, index) => ({
           id: index,
-          name: a.title
+          name: a.title,
+          url: a.url
         }));
+        
         const action = new ArticleActions.LoadArticlesAction(articles);
         this.store.dispatch(action);
         return true;

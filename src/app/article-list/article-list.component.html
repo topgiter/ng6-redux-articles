@@ -9,7 +9,9 @@
         <!-- Name Column -->
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let article"> {{article.name}} </td>
+            <td mat-cell *matCellDef="let article">
+                 <a href="{{article.url}}" target="_blank">{{article.name}}</a>
+            </td>
         </ng-container>
         
         <!-- Category Column -->
