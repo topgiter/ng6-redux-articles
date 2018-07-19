@@ -1,4 +1,5 @@
 <div class="category-edit">
+<<<<<<< HEAD
     <mat-card>
         <h2>Category Edit</h2>
         <mat-form-field>
@@ -7,4 +8,14 @@
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="updateCategory()">Save</button>
     </mat-card>
+=======
+    <h2>Category Edit</h2>
+
+    <div>
+        <label for="categoryName">Category Name: </label>
+        <input [(ngModel)]="category.name" id="categoryName" required>
+        <button (click)="updateCategory()">Save</button>
+    </div>
+
+>>>>>>> a668370d4825594311f66255b837b209ebd1c2cd
 </div>

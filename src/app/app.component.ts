@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../redux/app.reducer';
@@ -6,12 +7,16 @@ import { NewsService } from './app.service';
 import { throwError } from 'rxjs';
 import { Article } from '../redux/article/article.model';
 import * as ArticleActions from '../redux/article/article.actions';
+=======
+import { Component } from '@angular/core';
+>>>>>>> a668370d4825594311f66255b837b209ebd1c2cd
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+<<<<<<< HEAD
 
 export class AppComponent implements OnInit {
   navLinks: any[];
@@ -61,3 +66,7 @@ export class AppComponent implements OnInit {
     )
   }
 }
+=======
+export class AppComponent {
+}
+>>>>>>> a668370d4825594311f66255b837b209ebd1c2cd

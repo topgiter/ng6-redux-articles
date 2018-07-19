@@ -1,6 +1,7 @@
 <div class="category-detail">
     <h2>Category Detail</h2>
 
+<<<<<<< HEAD
     <p><b>Category Name: </b>{{category.name}}</p>
 
     <h3>Articles List</h3>
@@ -21,4 +22,24 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>    
+=======
+    <p><b>Category ID: </b>{{category.id}}</p>
+    <p><b>Category Name: </b>{{category.name}}</p>
+
+    <h3>Articles List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles; let idx = index;">
+                <td>{{idx + 1}}</td>
+                <td>{{article.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+>>>>>>> a668370d4825594311f66255b837b209ebd1c2cd
 </div>
